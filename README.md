@@ -1,15 +1,16 @@
 # Project Name
 
-Context and date
-
-Description
+A 2D platformer for MSCH C 220. Created on November 2nd, 2022.
 
 ## Implementation
-Which features you included
+- basic requirements for 2D platformer
+- color rect added for background
 
 ## References
+Scribble 2D platformer sprites and tiles from Kenney NL
 
 ## Future Development
+none
 
 ## Created by
-Jason Francis
+Riley Schweiss

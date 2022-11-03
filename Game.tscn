@@ -1,0 +1,189 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://Assets/tile_brick.png" type="Texture" id=1]
+[ext_resource path="res://Assets/tile_diagonal.png" type="Texture" id=2]
+[ext_resource path="res://Assets/tile_castle.png" type="Texture" id=3]
+[ext_resource path="res://Assets/tile_crate.png" type="Texture" id=4]
+[ext_resource path="res://Player/Player_Container.gd" type="Script" id=5]
+[ext_resource path="res://Camera.gd" type="Script" id=6]
+[ext_resource path="res://Enemies/Enemies.gd" type="Script" id=7]
+[ext_resource path="res://Enemies/Enemy2.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Coins/Coin.tscn" type="PackedScene" id=9]
+[ext_resource path="res://UI/HUD.gd" type="Script" id=10]
+[ext_resource path="res://Enemies/Enemy1.tscn" type="PackedScene" id=11]
+
+[sub_resource type="NavigationPolygon" id=6]
+vertices = PoolVector2Array( 2424, 688, 2424, 736, 2376, 736, 1600, 712, 1600, 640, 1152, 576, 1152, 512, 2560, 680, 2288, 872, 2128, 872, 2136, 832, 2288, 824, 2880, -352, 2888, 888, 2712, 880, 2712, 816, 1408, 640, 1856, 824, 1856, 888, 1721, 887, 1721, 829, 640, 768, 640, 704, 1400, 712, 1912, 760, 1912, 824, -1, 836, 320, 768, 2640, 816, 2640, 752, 2072, 824, 2080, 760, 384, 384, 384, 320, 768, 512, 2368, 824, 2568, 752, -8, -344, 768, 576, 128, 320, 128, 384, 320, 704 )
+polygons = [ PoolIntArray( 0, 1, 2, 3, 4 ), PoolIntArray( 5, 6, 7, 0, 4 ), PoolIntArray( 8, 9, 10, 11 ), PoolIntArray( 12, 13, 14, 15 ), PoolIntArray( 5, 4, 16 ), PoolIntArray( 17, 18, 19, 20 ), PoolIntArray( 21, 22, 23, 24, 25, 17 ), PoolIntArray( 21, 17, 20, 26, 27 ), PoolIntArray( 15, 28, 29, 12 ), PoolIntArray( 11, 10, 30, 31, 2 ), PoolIntArray( 7, 6, 32, 33 ), PoolIntArray( 32, 6, 34 ), PoolIntArray( 2, 35, 11 ), PoolIntArray( 29, 36, 7, 12 ), PoolIntArray( 37, 12, 7, 33 ), PoolIntArray( 5, 16, 23, 22, 38 ), PoolIntArray( 37, 33, 39 ), PoolIntArray( 26, 37, 39, 40 ), PoolIntArray( 27, 26, 40, 41 ), PoolIntArray( 22, 41, 40, 32, 34, 38 ), PoolIntArray( 3, 2, 31, 24, 23 ) ]
+outlines = [ PoolVector2Array( -8, -344, -1, 836, 1721, 829, 1721, 887, 1856, 888, 1856, 824, 1912, 824, 1912, 760, 2080, 760, 2072, 824, 2136, 832, 2128, 872, 2288, 872, 2288, 824, 2368, 824, 2376, 736, 2424, 736, 2424, 688, 2560, 680, 2568, 752, 2640, 752, 2640, 816, 2712, 816, 2712, 880, 2888, 888, 2880, -352 ), PoolVector2Array( 128, 320, 384, 320, 384, 384, 128, 384 ), PoolVector2Array( 320, 704, 640, 704, 640, 768, 320, 768 ), PoolVector2Array( 768, 512, 1152, 512, 1152, 576, 768, 576 ), PoolVector2Array( 1408, 640, 1600, 640, 1600, 712, 1400, 712 ) ]
+
+[sub_resource type="ConvexPolygonShape2D" id=1]
+points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
+
+[sub_resource type="ConvexPolygonShape2D" id=2]
+points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
+
+[sub_resource type="ConvexPolygonShape2D" id=3]
+points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
+
+[sub_resource type="ConvexPolygonShape2D" id=4]
+points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
+
+[sub_resource type="TileSet" id=5]
+0/name = "tile_diagonal.png 0"
+0/texture = ExtResource( 2 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 64, 64 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 1 )
+0/shape_one_way = false
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 1 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+1/name = "tile_crate.png 1"
+1/texture = ExtResource( 4 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 0, 0, 64, 64 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape = SubResource( 2 )
+1/shape_one_way = false
+1/shape_one_way_margin = 1.0
+1/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 2 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+1/z_index = 0
+2/name = "tile_castle.png 2"
+2/texture = ExtResource( 3 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 0, 0, 64, 64 )
+2/tile_mode = 0
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shape_offset = Vector2( 0, 0 )
+2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape = SubResource( 3 )
+2/shape_one_way = false
+2/shape_one_way_margin = 1.0
+2/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 3 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+2/z_index = 0
+3/name = "tile_brick.png 3"
+3/texture = ExtResource( 1 )
+3/tex_offset = Vector2( 0, 0 )
+3/modulate = Color( 1, 1, 1, 1 )
+3/region = Rect2( 0, 0, 64, 64 )
+3/tile_mode = 0
+3/occluder_offset = Vector2( 0, 0 )
+3/navigation_offset = Vector2( 0, 0 )
+3/shape_offset = Vector2( 0, 0 )
+3/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+3/shape = SubResource( 4 )
+3/shape_one_way = false
+3/shape_one_way_margin = 1.0
+3/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 4 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+3/z_index = 0
+
+[node name="Game" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -160.0
+margin_top = -528.0
+margin_right = 3136.0
+margin_bottom = 1056.0
+color = Color( 0.596078, 0.431373, 0.792157, 1 )
+
+[node name="Navigation2D" type="Navigation2D" parent="."]
+
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="Navigation2D"]
+navpoly = SubResource( 6 )
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource( 5 )
+collision_layer = 3
+format = 1
+tile_data = PoolIntArray( -131073, 1, 0, -196563, 1, 0, -65537, 1, 0, -131027, 1, 0, -1, 1, 0, -65491, 1, 0, 65535, 1, 0, 45, 1, 0, 131071, 1, 0, 65581, 1, 0, 196607, 1, 0, 131117, 1, 0, 262143, 1, 0, 196653, 1, 0, 327679, 1, 0, 262189, 1, 0, 393215, 1, 0, 327682, 1, 0, 327683, 1, 0, 327684, 1, 0, 327685, 1, 0, 327725, 1, 0, 458751, 1, 0, 393261, 1, 0, 524287, 1, 0, 458797, 1, 0, 589823, 1, 0, 524300, 1, 0, 524301, 1, 0, 524302, 1, 0, 524303, 1, 0, 524304, 1, 0, 524305, 1, 0, 524333, 1, 0, 655359, 1, 0, 589869, 1, 0, 720895, 1, 0, 655382, 1, 0, 655383, 1, 0, 655384, 1, 0, 655405, 1, 0, 786431, 1, 0, 720901, 1, 0, 720902, 1, 0, 720903, 1, 0, 720904, 1, 0, 720905, 1, 0, 720934, 2, 0, 720935, 2, 0, 720941, 1, 0, 851967, 1, 0, 786462, 2, 0, 786463, 2, 0, 786469, 2, 0, 786470, 2, 0, 786471, 2, 0, 786472, 2, 0, 786477, 1, 0, 917503, 1, 0, 851968, 1, 0, 851969, 1, 0, 851970, 1, 0, 851971, 1, 0, 851972, 1, 0, 851973, 1, 0, 851974, 1, 0, 851975, 1, 0, 851976, 1, 0, 851977, 1, 0, 851978, 1, 0, 851979, 1, 0, 851980, 1, 0, 851981, 1, 0, 851982, 1, 0, 851983, 1, 0, 851984, 1, 0, 851985, 1, 0, 851986, 1, 0, 851987, 1, 0, 851988, 1, 0, 851989, 1, 0, 851990, 1, 0, 851991, 1, 0, 851992, 1, 0, 851993, 1, 0, 851994, 1, 0, 851997, 2, 0, 851998, 2, 0, 851999, 2, 0, 852000, 2, 0, 852004, 2, 0, 852005, 2, 0, 852006, 2, 0, 852007, 2, 0, 852008, 2, 0, 852009, 2, 0, 852013, 1, 0, 983039, 3, 0, 917504, 3, 0, 917505, 3, 0, 917506, 3, 0, 917507, 3, 0, 917508, 3, 0, 917509, 3, 0, 917510, 3, 0, 917511, 3, 0, 917512, 3, 0, 917513, 3, 0, 917514, 3, 0, 917515, 3, 0, 917516, 3, 0, 917517, 1, 0, 917518, 1, 0, 917519, 1, 0, 917520, 1, 0, 917521, 1, 0, 917522, 1, 0, 917523, 1, 0, 917524, 1, 0, 917525, 1, 0, 917526, 1, 0, 917527, 1, 0, 917528, 1, 0, 917529, 1, 0, 917530, 1, 0, 917531, 1, 0, 917532, 1, 0, 917533, 1, 0, 917534, 1, 0, 917535, 1, 0, 917536, 1, 0, 917537, 1, 0, 917538, 1, 0, 917539, 1, 0, 917540, 1, 0, 917541, 1, 0, 917542, 1, 0, 917543, 1, 0, 917544, 1, 0, 917545, 1, 0, 917546, 1, 0, 917547, 1, 0, 917548, 1, 0, 917549, 1, 0 )
+
+[node name="Player_Container" type="Node2D" parent="."]
+script = ExtResource( 5 )
+
+[node name="Enemies" type="Node2D" parent="."]
+script = ExtResource( 7 )
+
+[node name="Enemy2" parent="Enemies" instance=ExtResource( 8 )]
+
+[node name="Enemy3" parent="Enemies" instance=ExtResource( 8 )]
+position = Vector2( 792, 480 )
+constraint_left = Vector2( 792, 480 )
+constraint_right = Vector2( 1144, 480 )
+
+[node name="Enemy1" parent="Enemies" instance=ExtResource( 11 )]
+position = Vector2( 656, 608 )
+
+[node name="Camera" type="Camera2D" parent="."]
+current = true
+limit_left = 0
+limit_top = 0
+limit_right = 2918
+limit_bottom = 950
+script = ExtResource( 6 )
+
+[node name="Coins" type="Node2D" parent="."]
+
+[node name="Coin" parent="Coins" instance=ExtResource( 9 )]
+position = Vector2( 800, 808 )
+
+[node name="Coin2" parent="Coins" instance=ExtResource( 9 )]
+position = Vector2( 928, 808 )
+
+[node name="Coin3" parent="Coins" instance=ExtResource( 9 )]
+position = Vector2( 1056, 808 )
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="HUD" type="Control" parent="UI"]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 10 )
+
+[node name="Background" type="ColorRect" parent="UI/HUD"]
+margin_right = 1024.0
+margin_bottom = 40.0
+color = Color( 0.360784, 0.145098, 0.835294, 0.490196 )
+
+[node name="Score" type="Label" parent="UI/HUD"]
+margin_right = 502.0
+margin_bottom = 40.0
+text = "Score:"
+valign = 1
